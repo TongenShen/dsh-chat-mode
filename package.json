@@ -1,0 +1,45 @@
+{
+  "name": "dsh-chat-mode",
+  "version": "1.0.0",
+  "description": "Chat 模式：DeepSeek Harness 的纯聊天 Agent 预设，只加载 AGENTS.md、只保留联网搜索，其余工具全部屏蔽。",
+  "type": "module",
+  "main": "./index.js",
+  "exports": {
+    ".": "./index.js",
+    "./cordis.patch.yml": "./cordis.patch.yml",
+    "./package.json": "./package.json"
+  },
+  "files": [
+    "index.js",
+    "cordis.patch.yml",
+    "README.md",
+    "README.en.md",
+    "LICENSE"
+  ],
+  "keywords": [
+    "dsh-plugin",
+    "deepseek-harness",
+    "agent-preset",
+    "chat",
+    "pure-chat"
+  ],
+  "author": "TongenShen",
+  "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/TongenShen/dsh-chat-mode.git"
+  },
+  "homepage": "https://github.com/TongenShen/dsh-chat-mode#readme",
+  "bugs": {
+    "url": "https://github.com/TongenShen/dsh-chat-mode/issues"
+  },
+  "engines": {
+    "dsh": ">=0.2.1-rc.1",
+    "node": "^22.19.0 || >=24.0.0"
+  },
+  "dsh": {
+    "bundle": {
+      "patch": "./cordis.patch.yml"
+    }
+  }
+}

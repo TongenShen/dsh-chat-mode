@@ -1,0 +1,41 @@
+# Chat 模式：一个聊天用的 Agent 预设。
+# 挂载 persona（对话人设）、agent-instructions（载入 AGENTS.md）、联网搜索（tool-web）
+# 和压缩；chat-no-tools 把 Host 的全局工具 working_directory 排除，
+# 只留下本预设的 web_search/web_fetch。
+- insert:
+    - id: preset-chat
+      name: '@deepseek-ai/dsh-agent-preset'
+      config:
+        id: chat
+        name: Chat
+        description: 聊天模式：载入 AGENTS.md，只保留联网搜索，其余工具全部屏蔽。
+        order: 0
+        plugins:
+          - id: persona
+            name: '@deepseek-ai/dsh-persona'
+            config:
+              prefix: |-
+                你是一个乐于助人的对话助手。像日常聊天一样自然地回答用户的问题，语气友好、简洁。
+                需要实时信息、外部资料或用户明确要求搜索时，调用 web_search 或 web_fetch 工具，然后用工具结果回答。
+                除此之外不执行命令、不读写文件、不做其他操作，只通过文字回复。
+          - id: agent-instructions
+            name: '@deepseek-ai/dsh-agent-instructions'
+            config:
+              maxBytes: 65536
+          - id: tool-web
+            name: '@deepseek-ai/dsh-tool-web'
+            config:
+              fetch: true
+              searchTimeoutMs: 60000
+          - id: chat-no-tools
+            name: dsh-chat-mode
+          - id: compaction
+            name: cordis:group
+            group: true
+            isolate:
+              compaction: true
+            config:
+              - id: compaction-basic
+                name: '@deepseek-ai/dsh-compaction-basic'
+              - id: command-compact
+                name: '@deepseek-ai/dsh-command-compact'
