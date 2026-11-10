@@ -15,13 +15,13 @@ A **Chat mode** agent preset for [DeepSeek Harness](https://github.com/deepseek-
 Requires DeepSeek Harness 0.2.1-rc.1 or newer.
 
 ```text
-plugin_manager install_bundle target github:TongenShen/dsh-chat-mode
+https://github.com/TongenShen/dsh-chat-mode
 ```
 
 Or install the repository directory directly:
 
 ```text
-plugin_manager install_bundle target <absolute path to this repository>
+<absolute path to this repository>
 ```
 
 Restart DSH afterwards, then select **Chat** when creating a new session.
@@ -39,7 +39,7 @@ Restart DSH afterwards, then select **Chat** when creating a new session.
 ## Uninstall
 
 ```text
-plugin_manager remove_bundle target dsh-chat-mode
+dsh plugin --profile web remove dsh-chat-mode
 ```
 
 ## License
