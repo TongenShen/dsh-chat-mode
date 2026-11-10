@@ -52,9 +52,9 @@ https://github.com/TongenShen/dsh-chat-mode
 - `ctx.tools.restrict()` 的 `deny` 名单只能写真实存在的全局工具名；写别的预设里的工具名会让预设加载失败。
 
 ## 卸载
-
+在终端或者 CMD 执行
 ```text
-plugin_manager remove_bundle target dsh-chat-mode
+dsh plugin --profile web remove dsh-chat-mode
 ```
 
 然后重启 DSH。
