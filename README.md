@@ -19,13 +19,13 @@
 在 Harness 里执行（或通过插件管理界面安装）：
 
 ```text
-plugin_manager install_bundle target github:TongenShen/dsh-chat-mode
+https://github.com/TongenShen/dsh-chat-mode
 ```
 
 ### 方式二：本地目录
 
 ```text
-plugin_manager install_bundle target <本仓库的绝对路径>
+<本仓库的绝对路径>
 ```
 
 安装后**重启 DSH**，新建会话时在预设选择里选 **Chat**。
